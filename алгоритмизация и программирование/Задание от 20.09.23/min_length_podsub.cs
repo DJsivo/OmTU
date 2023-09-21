@@ -3,7 +3,7 @@ class Posledovatelnost_iz_n
 {
     static void Main()
     {
-        int n, min_sub, cur_sub = 1, number, prv_number;  //кол-во элементов, минимальная длина, длина текущей послндовательности, текущее число, предыдущее число
+        int n, min_sub, cur_sub = 1, number, prv_number;
         n = Convert.ToInt32(Console.ReadLine());
         min_sub = n;
         prv_number = Convert.ToInt32(Console.ReadLine());
@@ -17,7 +17,7 @@ class Posledovatelnost_iz_n
             }
             else
             {
-                if((min_sub > cur_sub) & (cur_sub > 1))
+                if(min_sub > cur_sub)
                 {
                     min_sub = cur_sub;
 
