@@ -24,8 +24,10 @@ if (old > new + snos) and (c1<= new + snos):
     if l>p:
         summ = max(x,y)*c1 + (p-max(x,y))*(new+snos) + (l-p)*snos
 if (old > new + snos) and (c1 > new + snos):
-    if (l >= max(x,y)) and (l<p):
+    if l<p:
         summ = l*snos + p*new
+    if l>p:
+        summ = p*(new + snos) + (l-p)*snos
 print(summ)
 
 
