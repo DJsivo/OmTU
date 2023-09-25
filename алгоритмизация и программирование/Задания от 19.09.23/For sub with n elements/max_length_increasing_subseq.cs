@@ -12,14 +12,10 @@ class Posledovatelnost_n
             if (b > a)
             {
                 current_longgest_podposled++;
+                longgest_podposled = current_longgest_podposled;
             }
             else
             {
-                if (current_longgest_podposled > longgest_podposled)
-                {
-                    longgest_podposled = current_longgest_podposled;
-                }
-
                 current_longgest_podposled = 1;
             }
             a = b;
