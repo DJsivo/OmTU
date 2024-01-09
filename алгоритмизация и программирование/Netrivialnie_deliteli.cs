@@ -1,3 +1,4 @@
+//26.12.2023
 using System;
 class Netr_delit
 {
