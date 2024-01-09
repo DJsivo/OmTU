@@ -1,0 +1,20 @@
+from datetime import *
+
+print('Date format: YYYY-MM-DD')
+a1 = input('First date: ')
+b1 = input('Second date: ')
+p=int(input())
+
+a = a1[6:]+'-'+a1[3:5]+'-'+a1[0:2]
+b = b1[6:]+'-'+b1[3:5]+'-'+b1[0:2]
+
+aa = date.fromisoformat(a)
+bb = date.fromisoformat(b)
+delta = abs(aa - bb)
+
+
+sum=0i=0for i in range(0,delta.days+1):
+    sum+=p
+    p+=1    
+    i+=1
+print(sum)
