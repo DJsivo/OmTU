@@ -1,4 +1,3 @@
-//12.12.2023
 using System;
 class Books
 {
@@ -14,7 +13,7 @@ class Books
         this.MonthGive = MonthGive;
     }
     public String GetInfo(Books book)
-    {
+    { 
         String MonthGive = "";
         for (int i = 0; i < 12; i++)
         {
@@ -22,7 +21,7 @@ class Books
         }
         return "Автор:  " + book.Author + "\n Название:  " + book.Name + "\n Год выпуска:  " + book.Year + "\n Месяца выдачи в этом году:  " + MonthGive;
     }
-    public Books SortedYear(Books book, int sortYear)//позже года
+    public Books? SortedYear(Books book, int sortYear)//позже года
     {
         if (book.Year > sortYear) return book;
         else return null;
@@ -37,7 +36,7 @@ class Books
         if (book.Author.Equals(sortname)) return book;
         else return null;
     }
-    public int CountMonth (Books book)//количество месяцев в году, в которых выдавалась книга
+    public int CountMonth(Books book)//количество месяцев в году, в которых выдавалась книга
     {
         int countMonth = 0;
         for (int i = 0; i < 12; i++)
@@ -70,24 +69,38 @@ class Work
         for (int i = 0; i < books.Length; i++)
         {
             Books book = books[i];
-            if (book.SortedYear(book, sortyear) != null) Console.WriteLine(" "); Console.WriteLine(book.GetInfo(book));
+            if (book.SortedYear(book, sortyear) != null)
+            {
+                Console.WriteLine(" ");
+                Console.WriteLine(book.GetInfo(book));
+            }
         }
         Console.WriteLine(" "); Console.WriteLine("ВСЕ КНИГИ ЗАДАННОГО АВТОРА: ");
         for (int i = 0; i < books.Length; i++)
         {
             Books book = books[i];
-            if (book.SortedAuthor(book, sortauthor) != null) Console.WriteLine(" "); Console.WriteLine(book.GetInfo(book));
+            if (book.SortedAuthor(book, sortauthor) != null)
+            {
+                Console.WriteLine(" ");
+                Console.WriteLine(book.GetInfo(book));
+            }
         }
-        Console.WriteLine(" "); Console.WriteLine("ВСЕ КНИГИ ЗАДАННОГО НАЗВАНИЯ: ");
+            Console.WriteLine(" "); Console.WriteLine("ВСЕ КНИГИ ЗАДАННОГО НАЗВАНИЯ: ");
         for (int i = 0; i < books.Length; i++)
         {
             Books book = books[i];
-            if (book.SortedName(book, sortname) != null) Console.WriteLine(" "); Console.WriteLine(book.GetInfo(book));
+            if (book.SortedName(book, sortname) != null)
+            {
+                Console.WriteLine(" ");
+                Console.WriteLine(book.GetInfo(book));
+            }
         }
         Console.WriteLine(" "); Console.WriteLine("КОЛИЧЕСТВО МЕСЯЦЕВ В ГОДУ, В КОТОРЫХ ВЫДАВАЛАСЬ КНИГА:  ");
         for (int i = 0; i < books.Length; i++)
         {
-            Console.WriteLine(" ");Console.WriteLine($"Для книги: \n {books[i].GetInfo(books[i])} \n Количество месяцев в году, в которых выдавалась книга: {books[i].CountMonth(books[i])}");
+            Console.WriteLine(" "); 
+            Console.WriteLine($"Для книги: \n {books[i].GetInfo(books[i])} \n Количество месяцев в году, в которых выдавалась книга: {books[i].CountMonth(books[i])}");
         }
     }
 }
+
