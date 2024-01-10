@@ -34,7 +34,7 @@ class Books
     }
     public Books? SortedName(Books book, string sortname)//название
     {
-        if (book.Author.Equals(sortname)) return book;
+        if (book.Name.Equals(sortname)) return book;
         else return null;
     }
     public int CountMonth(Books book)//количество месяцев в году, в которых выдавалась книга
