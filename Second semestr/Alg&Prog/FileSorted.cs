@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-class Program
+class Hz
 {
     static void Main()
     {
