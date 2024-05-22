@@ -1,31 +1,60 @@
-﻿using System;
-using System.IO;
-class Hz
+class hhh
 {
-    static void Main()
+    static void Main(string[] args)
     {
-        string shortestSubA = "";
-        int minSubLeng = int.MaxValue;
-        using (StreamReader file = new StreamReader(@"MyFile.txt"))
+        int mCount = 0;
+        int m = int.MaxValue;
+        List<string> list = new List<string>();
+        try
         {
-            string line = file.ReadLine();
+            StreamReader f1 = new StreamReader("C:\\Users\\t-pud\\Downloads\\OmSTU\\Alg&Proga\\a.txt");
+            string line = f1.ReadLine();
             while (line != null)
             {
-                int subLeng = 0;
-                foreach (char c in line)
+                foreach (var i in line)
                 {
-                    if (c == 'a') subLeng++;
+                    if (i == 'A')
+                    {
+                        mCount = mCount + 1;
+                        string s = line;
+                        list.Add(s);
+                    }
+                    if (i != 'A' && mCount != 0)
+                    {
+                        if (mCount < m)
+                        {
+                            m = mCount;
+                        }
+                        mCount = 0;
+                    }
                 }
-                if ((subLeng > 0) && (subLeng < minSubLeng))
-                {
-                    minSubLeng = subLeng;
-                    shortestSubA = line;
-                }
+                if (mCount < m && mCount != 0)
+                    m = mCount;
+                line = f1.ReadLine();
             }
+            int n = 0;
+            foreach (var l in list)
+            {
+                foreach (var c in l)
+                {
+                    if (c == 'A')
+                    {
+                        n++;
+                    }
+                }
+                if (n == m)
+                {
+                    Console.WriteLine(l);
+                    break;
+                }
+                n = 0;
+            }
+
+            f1.Close();
         }
-        Console.WriteLine(@$"Строка с наименьшей длиной подпоследовательности 'а': 
-{shortestSubA}
-Длина подпоследовательности:
-{minSubLeng}");
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
     }
 }
